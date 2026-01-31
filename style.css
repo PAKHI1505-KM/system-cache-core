@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #0d0d12, #1a1a26);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+/* Fade animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.3;
+}
+
+/* Music button */
+#musicBtn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 100;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Memories */
+.memories h2 {
+  text-align: center;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.memory {
+  padding: 45px;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: transform .4s ease, background .4s ease;
+}
+
+.memory:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.05);
+}
+
+.memory-display {
+  margin-top: 40px;
+  text-align: center;
+  animation: fadeSoft .8s ease;
+}
+
+@keyframes fadeSoft {
+  from { opacity: 0; transform: scale(.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 6px;
+  transition: transform .6s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.06);
+}
+
+/* Video */
+.video video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Letter */
+.letter {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+/* Hearts */
+.hearts {
+  text-align: center;
+}
+
+.hearts button {
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.heart {
+  position: fixed;
+  animation: floatUp 2.5s ease-out forwards;
+  font-size: 1.4rem;
+}
+
+@keyframes floatUp {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-160px) scale(1.4); }
+}
